@@ -1,5 +1,7 @@
-import {io} from 'socket.io-client';
+import { io } from 'socket.io-client';
 
-export function  connectWS(){
-    return io('http://localhost:4600');
+export function connectWS() {
+    // Vite uses import.meta.env. If you use Create React App, it would be process.env.REACT_APP_BACKEND_URL
+    const backendUrl =  'https://nexuschat-backend-1.onrender.com';
+    return io(backendUrl);
 }
